@@ -22,7 +22,7 @@ def verify(check, variable_name, value, message):
 
 
 def package_check(s):
-    return '(For package.json)' in s
+    return '(For pyproject.toml)' in s
 
 def check_specials_characters(s):
     pattern = re.compile("^[a-z_][a-z_0-9]*")

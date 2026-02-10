@@ -21,3 +21,13 @@ $ cookiecutter gh:minhsueh/mpships-app-boilerplate
 - `first_version`: Initial project version. Default: `0.1.0`
 - `license`: Choose one of the following licenses: `MIT License`, `BSD License`, `ISC License`,`Apache Software License 2.0`, `GNU General Public License v3`, `Not open source`. Default: `1` (`MIT License`)
 - `install_dependencies`: Automatically create a virtual environment and install default dependencies. Default: `y`
+4. Navigate to your project directory:
+```
+$ cd <project_shortname>
+```
+5. Activate the Virtual Environment
+If you selected `install_dependencies = y`, activate the virtual environment:
+```
+$ source .venv/bin/activate
+```
+Otherwise, we strongly recommend creating a virtual environment to manage your project dependencies.

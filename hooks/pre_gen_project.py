@@ -6,9 +6,9 @@ full_name = '{{cookiecutter.author_name}}'
 email = '{{cookiecutter.author_email}}'
 project_shortname = '{{cookiecutter.project_shortname}}'
 
-invalid_package_message = 'Invalid {variable}: {value}'
+invalid_package_message = '!!! Invalid {variable}: {value}'
 project_shortname_message = '''
-({variable}={value}) should be a valid Python package name.
+!!! ({variable}={value}) should be a valid Python package name.
 
 Only lowercase letters, numbers, and `_` are allowed, and the name must start with a non-numeric character. 
 '''

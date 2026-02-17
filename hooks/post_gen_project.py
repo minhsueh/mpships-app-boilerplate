@@ -64,6 +64,10 @@ _execute_command(
     r'{} -m pip install .'.format(python_executable)
 )
 
+_execute_command(
+    'source .venv/bin/activate'
+)
+
 print('\n{} ready!\n'.format(project_shortname))
 
 

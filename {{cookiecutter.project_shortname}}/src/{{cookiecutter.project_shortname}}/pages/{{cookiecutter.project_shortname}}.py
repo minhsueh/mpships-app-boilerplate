@@ -18,7 +18,7 @@ mpr = get_mp_rester()
 # Define your app layout here
 layout = html.Div(
     [
-        html.H2({{cookiecutter.project_name}}, style={"textAlign": "center"}),
+        html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
         html.Button(
             "Change Color", 
             id="color-button", 

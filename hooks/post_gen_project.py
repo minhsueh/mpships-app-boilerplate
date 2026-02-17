@@ -64,11 +64,11 @@ _execute_command(
     r'{} -m pip install .'.format(python_executable)
 )
 
-print('\n{} ready!\n'.format(project_shortname))
+activate_cmd = '.venv\\Scripts\\activate' if is_windows else 'source .venv/bin/activate'
 
-if is_windows:
-    print('To get started, run: .venv\\Scripts\\activate')
-else:
-    print('To get started, run: source .venv/bin/activate')
+print('\n[DONE] {} ready!\n'.format(project_shortname))
+print("To get started, run the following commands:")
+print(f"  cd {project_shortname}")
+print(f"  {activate_cmd}")
 
 sys.exit(0)

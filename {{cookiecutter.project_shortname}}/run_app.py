@@ -4,4 +4,10 @@ from src.{{cookiecutter.project_shortname}}.app import app
 server = app.server
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8050)
+    host = "127.0.0.1"
+    port = 8050
+    home_path = "/{{cookiecutter.project_shortname}}/"
+
+    print(f"Dash is running on http://{host}:{port}{home_path}")
+
+    app.run(debug=True, host=host, port=port)

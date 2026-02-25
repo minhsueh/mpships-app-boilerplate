@@ -16,7 +16,7 @@ license = "{% set _license_identifiers = {'MIT License': 'MIT','BSD License': 'B
 requires-python = ">= 3.11"
 
 dependencies = [
-  # "mpships_infra"
+  "mpships_infra_dev"
 ]
 
 [project.optional-dependencies]

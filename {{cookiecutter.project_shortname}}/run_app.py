@@ -8,6 +8,6 @@ if __name__ == "__main__":
     port = 8050
     home_path = "/{{cookiecutter.project_shortname}}/"
 
-    print(f"Dash is running on http://{host}:{port}{home_path}")
+    print(f"Your app is running on http://{host}:{port}{home_path}")
 
     app.run(debug=True, host=host, port=port)

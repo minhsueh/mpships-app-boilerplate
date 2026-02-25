@@ -13,3 +13,6 @@ from mpships_infra import get_mp_rester
 mpr = get_mp_rester()
 docs = mpr.materials.summary.search(material_ids = ["mp-149"])
 ```
+
+## Useful resourses
+- [Crystal Toolkit](https://github.com/materialsproject/crystaltoolkit): a web app framework from the Materials Project allowing Python developers to easily make an interactive web app to display materials science information.

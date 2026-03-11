@@ -5,8 +5,12 @@
 
 ## Get started
 1. Make sure you are developing inside a virtual environment to manage dependencies properly.
-2. Add your awesome design to: `src/{{cookiecutter.description}}/pages/`
-3. To query data from the Materials Project API, use:
+2. Add you MP_API_KEY to environmental variables with 
+```
+export MP_API_KEY=<YOUR_API_KEY>
+```
+3. Add your awesome design to: `src/{{cookiecutter.description}}/pages/`
+4. To query data from the Materials Project API, use:
 ```
 from mpships_infra import get_mp_rester
 

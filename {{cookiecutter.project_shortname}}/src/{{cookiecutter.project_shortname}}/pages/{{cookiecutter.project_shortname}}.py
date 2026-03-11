@@ -2,7 +2,7 @@ import dash
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
-from mpships_infra import get_mp_rester
+from mpships_infra import get_rester
 
 # Register this page at the endpoint: {{cookiecutter.project_shortname}}
 dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/")
@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/")
 #        chemsys=["Au"], fields=["material_id", "has_props"]
 #    )
 # See more information at: https://docs.materialsproject.org/downloading-data/using-the-api/getting-started
-mpr = get_mp_rester()
+mpr = get_rester()
 
 # Define your app layout here
 layout = html.Div(

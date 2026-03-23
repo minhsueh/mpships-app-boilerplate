@@ -1,11 +1,11 @@
-import dash
+import dash # Required for MPShips functionality — do not remove
+from mpships_infra import get_rester # Required for MPShips functionality — do not remove
+
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
-from mpships_infra import get_rester
-
 # Register this page at the endpoint: {{cookiecutter.project_shortname}}
-dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/")
+dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/") # Required for MPShips functionality — do not remove
 
 # Use `mpr` for retrieving data from MPRester
 # Example:
@@ -13,7 +13,7 @@ dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/")
 #        chemsys=["Au"], fields=["material_id", "has_props"]
 #    )
 # See more information at: https://docs.materialsproject.org/downloading-data/using-the-api/getting-started
-mpr = get_rester()
+mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
 # Define your app layout here
 layout = html.Div(

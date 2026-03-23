@@ -16,23 +16,24 @@ dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/") # Requ
 mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
 # Define your app layout here
-layout = html.Div(
-    [
-        html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
-        html.Button(
-            "Change Color", 
-            id="color-button", 
-            n_clicks=0,
-        ),
-    ],
-    id="project-div",
-    style={
-        "padding": "40px", 
-        "textAlign": "center", 
-        "border": "1px solid #ccc",
-        "transition": "background-color 0.5s ease"
-    }
-)
+def layout(**kwargs):
+    return html.Div(
+        [
+            html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
+            html.Button(
+                "Change Color", 
+                id="color-button", 
+                n_clicks=0,
+            ),
+        ],
+        id="project-div",
+        style={
+            "padding": "40px", 
+            "textAlign": "center", 
+            "border": "1px solid #ccc",
+            "transition": "background-color 0.5s ease"
+        }
+    )
 
 # Callbacks in Dash Pages use the global @callback decorator
 @callback(

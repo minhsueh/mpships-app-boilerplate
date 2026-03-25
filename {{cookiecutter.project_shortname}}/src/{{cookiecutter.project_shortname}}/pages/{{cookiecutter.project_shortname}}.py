@@ -5,7 +5,7 @@ from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
 # Register this page at the endpoint: {{cookiecutter.project_shortname}}
-dash.register_page(__name__, path="/{{cookiecutter.project_shortname}}/") # Required for MPShips functionality — do not remove
+dash.register_page(__name__, path="/") # Required for MPShips functionality — do not remove
 
 # Use `mpr` for retrieving data from MPRester
 # Example:

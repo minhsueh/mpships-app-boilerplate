@@ -1,6 +1,6 @@
 from mpships_infra import create_app
 import os
 
-path_to_pages = os.path.join(os.path.dirname(__file__), "pages")
+url = "/{{cookiecutter.project_shortname}}/"
 
-app = create_app(pages_folder=path_to_pages)
+app = create_app(url=url)

@@ -1,6 +1,7 @@
 {
   "project_name": "My MPships App",
   "project_shortname": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+  "project_appname": "{{ cookiecutter.project_name|replace('-', ' ')|replace('_', ' ')|title|replace(' ', '') }}",
   "author_name": "Enter your first and last name (For pyproject.toml)",
   "author_email": "Enter your email (For pyproject.toml)",
   "description": "Project Description",

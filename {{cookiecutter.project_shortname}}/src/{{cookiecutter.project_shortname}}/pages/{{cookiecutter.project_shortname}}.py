@@ -1,11 +1,12 @@
 import dash # Required for MPShips functionality — do not remove
 from mpships_infra import get_rester # Required for MPShips functionality — do not remove
+from mpships_infra.mpshipsapp import MPShipsApp
 
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
 # Register this page at the endpoint: {{cookiecutter.project_shortname}}
-dash.register_page(__name__, path="/") # Required for MPShips functionality — do not remove
+# dash.register_page(__name__, path="/") # Required for MPShips functionality — do not remove
 
 # Use `mpr` for retrieving data from MPRester
 # Example:
@@ -15,47 +16,50 @@ dash.register_page(__name__, path="/") # Required for MPShips functionality — 
 # See more information at: https://docs.materialsproject.org/downloading-data/using-the-api/getting-started
 mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
-# Define your app layout here
-def layout(**kwargs):
-    return html.Div(
-        [
-            html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
-            html.Button(
-                "Change Color", 
-                id="color-button", 
-                n_clicks=0,
-            ),
-        ],
-        id="project-div",
-        style={
-            "padding": "40px", 
-            "textAlign": "center", 
-            "border": "1px solid #ccc",
-            "transition": "background-color 0.5s ease"
-        }
-    )
 
-# Callbacks in Dash Pages use the global @callback decorator
-@callback(
-    Output("project-div", "style"),
-    Input("color-button", "n_clicks"),
-    prevent_initial_call=True
-)
-def update_background(n_clicks):
-    # Base style
-    style = {
-        "padding": "40px", 
-        "textAlign": "center", 
-        "border": "1px solid #ccc",
-        "transition": "background-color 0.5s ease"
-    }
+class {{cookiecutter.project_appname}}(MPShipsApp):
+    # Define your app layout here
+    def layout(**kwargs):
+        return html.Div(
+            [
+                html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
+                html.Button(
+                    "Change Color", 
+                    id="color-button", 
+                    n_clicks=0,
+                ),
+            ],
+            id="project-div",
+            style={
+                "padding": "40px", 
+                "textAlign": "center", 
+                "border": "1px solid #ccc",
+                "transition": "background-color 0.5s ease"
+            }
+        )
 
-    # Toggle logic
-    if n_clicks % 2 == 1:
-        style["backgroundColor"] = "#3273dc"
-        style["color"] = "white"
-    else:
-        style["backgroundColor"] = "transparent"
-        style["color"] = "black"
+    # Callbacks in Dash Pages use the global @callback decorator
+    def generate_callbacks(self, app, cache):
+        @app.callback(
+            Output("project-div", "style"),
+            Input("color-button", "n_clicks"),
+            prevent_initial_call=True
+        )
+        def update_background(n_clicks):
+            # Base style
+            style = {
+                "padding": "40px", 
+                "textAlign": "center", 
+                "border": "1px solid #ccc",
+                "transition": "background-color 0.5s ease"
+            }
 
-    return style
+            # Toggle logic
+            if n_clicks % 2 == 1:
+                style["backgroundColor"] = "#3273dc"
+                style["color"] = "white"
+            else:
+                style["backgroundColor"] = "transparent"
+                style["color"] = "black"
+
+            return style

@@ -17,9 +17,9 @@ from dash.exceptions import PreventUpdate
 mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
 
-class {{cookiecutter.project_appname}}(MPShipsApp):
+class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips functionality — do not remove
     # Define your app layout here
-    def layout(**kwargs):
+    def get_layout(self, **kwargs): # Required for MPShips functionality — do not remove
         return html.Div(
             [
                 html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
@@ -39,7 +39,8 @@ class {{cookiecutter.project_appname}}(MPShipsApp):
         )
 
     # Callbacks in Dash Pages use the global @callback decorator
-    def generate_callbacks(self, app, cache):
+    def generate_callbacks(self, app, cache): # Required for MPShips functionality — do not remove
+        super().generate_callbacks(app, cache) # Required for MPShips functionality — do not remove
         @app.callback(
             Output("project-div", "style"),
             Input("color-button", "n_clicks"),

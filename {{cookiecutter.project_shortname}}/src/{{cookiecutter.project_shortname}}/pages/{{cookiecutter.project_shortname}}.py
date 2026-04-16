@@ -1,6 +1,5 @@
 import dash # Required for MPShips functionality — do not remove
-from mpships_infra import get_rester # Required for MPShips functionality — do not remove
-from mpships_infra.mpshipsapp import MPShipsApp
+from mpships_infra import get_rester, MPShipsApp # Required for MPShips functionality — do not remove
 
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
@@ -22,45 +21,13 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
     def get_layout(self, **kwargs): # Required for MPShips functionality — do not remove
         return html.Div(
             [
-                html.H2("{{cookiecutter.project_name}}", style={"textAlign": "center"}),
-                html.Button(
-                    "Change Color", 
-                    id="color-button", 
-                    n_clicks=0,
-                ),
+                html.H1("Hello {{cookiecutter.author_name}}! Welcome to {{cookiecutter.project_name}}"),
+                html.H4("You can find example app via {{cookiecutter.project_name}}/src/{{cookiecutter.project_name}}/example_pages/")
             ],
-            id="project-div",
-            style={
-                "padding": "40px", 
-                "textAlign": "center", 
-                "border": "1px solid #ccc",
-                "transition": "background-color 0.5s ease"
-            }
+            style={"textAlign": "center"}
         )
 
     # Callbacks in Dash Pages use the global @callback decorator
     def generate_callbacks(self, app, cache): # Required for MPShips functionality — do not remove
         super().generate_callbacks(app, cache) # Required for MPShips functionality — do not remove
-        @app.callback(
-            Output("project-div", "style"),
-            Input("color-button", "n_clicks"),
-            prevent_initial_call=True
-        )
-        def update_background(n_clicks):
-            # Base style
-            style = {
-                "padding": "40px", 
-                "textAlign": "center", 
-                "border": "1px solid #ccc",
-                "transition": "background-color 0.5s ease"
-            }
-
-            # Toggle logic
-            if n_clicks % 2 == 1:
-                style["backgroundColor"] = "#3273dc"
-                style["color"] = "white"
-            else:
-                style["backgroundColor"] = "transparent"
-                style["color"] = "black"
-
-            return style
+        

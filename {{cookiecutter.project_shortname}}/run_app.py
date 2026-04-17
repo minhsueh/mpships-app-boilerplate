@@ -1,3 +1,7 @@
+"""
+CRITICAL: DO NOT EDIT. For MPShips users: Manual changes may cause system instability.
+"""
+
 import os
 from src.{{cookiecutter.project_shortname}}.app import app
 

@@ -1,8 +1,9 @@
 """
-CRITICAL: DO NOT EDIT. Manual changes may cause system instability.
+CRITICAL: DO NOT EDIT. For MPShips users: Manual changes may cause system instability.
 """
 
 from mpships_infra import create_app
+from . import pages
 import os
 
 url = "/{{cookiecutter.project_shortname}}/"

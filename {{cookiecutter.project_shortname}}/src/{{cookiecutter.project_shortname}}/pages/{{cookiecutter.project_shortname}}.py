@@ -4,9 +4,6 @@ from mpships_infra import get_rester, MPShipsApp # Required for MPShips function
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
-# Register this page at the endpoint: {{cookiecutter.project_shortname}}
-# dash.register_page(__name__, path="/") # Required for MPShips functionality — do not remove
-
 # Use `mpr` for retrieving data from MPRester
 # Example:
 # mpr.materials.summary.search(
@@ -22,7 +19,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
         return html.Div(
             [
                 html.H1("Hello {{cookiecutter.author_name}}! Welcome to {{cookiecutter.project_name}}"),
-                html.H4("You can find example app via {{cookiecutter.project_name}}/src/{{cookiecutter.project_name}}/example_pages/")
+                html.H4("You can find example app via '{{cookiecutter.project_shortname}}/src/{{cookiecutter.project_shortname}}/example_pages/'")
             ],
             style={"textAlign": "center"}
         )

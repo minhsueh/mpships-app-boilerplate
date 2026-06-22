@@ -10,4 +10,4 @@ url = "/dielectric_function/"
 path_to_pages = os.path.join(os.path.dirname(__file__), "example_pages")
 assets_folder = os.path.join(os.path.dirname(__file__), "assets")
 
-example_app = create_app(url=url, pages_folder=path_to_pages, assets_folder=assets_folder)
+example_app = create_app(pages_folder=path_to_pages, assets_folder=assets_folder)

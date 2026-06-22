@@ -5,13 +5,12 @@ from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 import plotly.graph_objects as pgo
 
-# Use `mpr` for retrieving data from MPRester
+# Use `get_rester()` for retrieving data from MPRester
 # Example:
-# mpr.materials.summary.search(
+# get_rester().materials.summary.search(
 #        chemsys=["Au"], fields=["material_id", "has_props"]
 #    )
 # See more information at: https://docs.materialsproject.org/downloading-data/using-the-api/getting-started
-mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
 
 class DielectricFunctionViewer(MPShipsApp): # Required for MPShips functionality — do not remove
@@ -54,7 +53,7 @@ class DielectricFunctionViewer(MPShipsApp): # Required for MPShips functionality
                 raise PreventUpdate
 
             # Perform MP search
-            all_mat_list = mpr.materials.summary.search(
+            all_mat_list = get_rester().materials.summary.search(
                 chemsys=input_text, fields=["material_id", "has_props"]
             )
 
@@ -66,7 +65,7 @@ class DielectricFunctionViewer(MPShipsApp): # Required for MPShips functionality
             if not opt_mpids:
                 return pgo.Figure(), pgo.Figure()
 
-            mat_op_docs = mpr.materials.absorption.search(
+            mat_op_docs = get_rester().materials.absorption.search(
                 material_ids=opt_mpids,
                 fields=[
                     "material_id",

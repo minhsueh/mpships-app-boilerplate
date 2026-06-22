@@ -62,3 +62,10 @@ ignore = [
   "E731",    # Do not assign a `lambda` expression, use a `def`
   "G004",    # Allow logging statement uses f-string
 ]
+
+[tool.setuptools.package-data]
+"{{cookiecutter.project_shortname}}" = [
+  "assets/**/*",
+  "*.json",
+  "*.yaml",
+]

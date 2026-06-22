@@ -4,13 +4,12 @@ from mpships_infra import get_rester, MPShipsApp # Required for MPShips function
 from dash import html, dcc, callback, Output, Input
 from dash.exceptions import PreventUpdate
 
-# Use `mpr` for retrieving data from MPRester
+# Use `get_rester()` for retrieving data from MPRester
 # Example:
-# mpr.materials.summary.search(
+# get_rester().materials.summary.search(
 #        chemsys=["Au"], fields=["material_id", "has_props"]
 #    )
 # See more information at: https://docs.materialsproject.org/downloading-data/using-the-api/getting-started
-mpr = get_rester() # Required for retrieving data from the Materials Project — do not remove
 
 
 class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips functionality — do not remove

@@ -13,8 +13,19 @@ from dash.exceptions import PreventUpdate
 
 
 class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips functionality — do not remove
-    # Define your app layout here
-    def get_layout(self, **kwargs): # Required for MPShips functionality — do not remove
+    # Optional — remove if your app needs no setup, will be called in __init__
+    def ships_setup(self, *args, **kwargs):
+        pass
+    
+    # Required — defines what renders. Omitting this will raise an error on load.
+    def ships_layout(self):
+        """The layout of the main content.
+
+        Returns:
+            html.Div: The Dash layout for this app.
+        """
+        # Example code — replace with your own layout
+        # Exampled code
         return html.Div(
             [
                 html.H1("Hello {{cookiecutter.author_name}}! Welcome to {{cookiecutter.project_name}}"),
@@ -22,8 +33,8 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
             ],
             style={"textAlign": "center"}
         )
+    
 
-    # Callbacks in Dash Pages use the global @callback decorator
-    def generate_callbacks(self, app, cache): # Required for MPShips functionality — do not remove
-        super().generate_callbacks(app, cache) # Required for MPShips functionality — do not remove
-        
+    # Optional — remove if your app has no callbacks
+    def ships_callbacks(self, app, cache):
+        pass

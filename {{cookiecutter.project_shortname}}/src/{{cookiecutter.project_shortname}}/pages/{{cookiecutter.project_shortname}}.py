@@ -17,7 +17,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
     def ships_setup(self, *args, **kwargs):
         # Example code — replace with your own layout
         # Exampled code
-        self.name = "Pilot"
+        self.my_name = "Pilot"
     
     # Required — defines what renders. Omitting this will raise an error on load.
     def ships_layout(self):
@@ -31,7 +31,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
         return html.Div(
             [
                 html.H1("Hello {{cookiecutter.author_name}}! Welcome to {{cookiecutter.project_name}}"),
-                html.H4(f"My name is {self.name}", id="name-div", style={"textAlign": "center"}),
+                html.H4(f"My name is {self.my_name}", id="name-div", style={"textAlign": "center"}),
                 html.H4("You can find example app via '{{cookiecutter.project_shortname}}/src/{{cookiecutter.project_shortname}}/example_pages/'"),
                 dcc.Dropdown(
                     id="name-align-dropdown",

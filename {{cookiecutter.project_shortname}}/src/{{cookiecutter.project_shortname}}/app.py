@@ -6,8 +6,8 @@ from mpships_infra import create_app
 from . import pages
 import os
 
-url = "/{{cookiecutter.project_shortname}}/"
+endpoint = "/{{cookiecutter.project_shortname}}/"
 path_to_pages = os.path.join(os.path.dirname(__file__), "pages")
 assets_folder = os.path.join(os.path.dirname(__file__), "assets")
 
-app = create_app(url=url, pages_folder=path_to_pages, assets_folder=assets_folder)
+app = create_app(endpoint=endpoint, pages_folder=path_to_pages, assets_folder=assets_folder)

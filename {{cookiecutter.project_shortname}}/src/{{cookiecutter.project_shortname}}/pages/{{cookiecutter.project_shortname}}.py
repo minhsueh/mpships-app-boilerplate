@@ -17,7 +17,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
     def ships_setup(self, *args, **kwargs):
         # Example code — replace with your own layout
         # Exampled code
-        self.my_name = "Pilot"
+        self.my_role = "Navigator"
     
     # Required — defines what renders. Omitting this will raise an error on load.
     def ships_layout(self):
@@ -30,9 +30,43 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
         # Exampled code
         return html.Div(
             [
-                html.H1("Hello {{cookiecutter.author_name}}! Welcome to {{cookiecutter.project_name}}"),
-                html.H4(f"My name is {self.my_name}", id="name-div", style={"textAlign": "center"}),
-                html.H4("You can find example app via '{{cookiecutter.project_shortname}}/src/{{cookiecutter.project_shortname}}/example_pages/'"),
+                html.H1(
+                    "Welcome to MPShips, Captain {{cookiecutter.author_name}}!"
+                ),
+                html.H4(
+                    "Your ship, {{cookiecutter.project_name}}, is now under construction."
+                ),
+                html.H4(
+                    f"I am your {self.my_role}, and I'll help you get your ship ready to sail!",
+                    id="name-div",
+                    style={"textAlign": "center"},
+                ),
+                html.P(
+                    [
+                        "To get started, check out the example pages at ",
+                        html.Code(
+                            "{{cookiecutter.project_shortname}}/src/"
+                            "{{cookiecutter.project_shortname}}/example_pages/"
+                        ),
+                    ]
+                ),
+                html.H4(
+                    "To get started, check out the example pages at "
+                    "'{{cookiecutter.project_shortname}}/src/"
+                    "{{cookiecutter.project_shortname}}/example_pages/'"
+                ),
+                html.H4(
+                    [
+                        "Once your app is developed here (replacing this welcome page in "
+                        "`ships_layout` and `ships_callbacks`), submit it to the ",
+                        html.A(
+                            "MPShips registry",
+                            href="https://github.com/materialsproject/MPShips",
+                            target="_blank",
+                        ),
+                        " for review. Once approved, your ship will be cleared to set sail with the MPShips fleet! 🚢",
+                    ]
+                ),
                 dcc.Dropdown(
                     id="name-align-dropdown",
                         options=[

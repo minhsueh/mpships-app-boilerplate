@@ -44,7 +44,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
                 ),
                 html.P(
                     [
-                        "To get started, check out the example pages at ",
+                        "You can see another example app in ",
                         html.Code(
                             "{{cookiecutter.project_shortname}}/src/"
                             "{{cookiecutter.project_shortname}}/example_pages/"
@@ -69,7 +69,7 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
                 html.H4("Once approved, your ship will be cleared to set sail with the MPShips fleet!"),
                 html.Br(),
                 html.Label(
-                    "Where is navigator?",
+                    "Where is navigator? (Just a callback example)",
                     style={"display": "block", "marginBottom": "0.5rem"},
                 ),
                 dcc.Dropdown(

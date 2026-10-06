@@ -31,10 +31,11 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
         return html.Div(
             [
                 html.H1(
-                    "Welcome to MPShips, Captain {{cookiecutter.author_name}}!"
+                    "Welcome to MPShips, Captain {{cookiecutter.author_name}}!",
+                    className="title is-1"
                 ),
                 html.H4(
-                    "Your ship, {{cookiecutter.project_name}}, is now under construction."
+                    "Your ship, {{cookiecutter.project_appname}}, is now under construction."
                 ),
                 html.H4(
                     f"I am your {self.my_role}, and I'll help you get your ship ready to sail!",
@@ -51,21 +52,24 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
                     ]
                 ),
                 html.H4(
-                    "To get started, check out the example pages at "
-                    "'{{cookiecutter.project_shortname}}/src/"
-                    "{{cookiecutter.project_shortname}}/example_pages/'"
-                ),
-                html.H4(
                     [
-                        "Once your app is developed here (replacing this welcome page in "
-                        "`ships_layout` and `ships_callbacks`), submit it to the ",
+                        "Once your app is developed here (replacing this welcome page in ",
+                        html.Code("ships_layout"),
+                        " and ",
+                        html.Code("ships_callbacks"),
+                        "), submit it to the ",
                         html.A(
                             "MPShips registry",
                             href="https://github.com/materialsproject/MPShips",
                             target="_blank",
                         ),
-                        " for review. Once approved, your ship will be cleared to set sail with the MPShips fleet! 🚢",
+                        " for review. Once approved, your ship will be cleared to set sail with the MPShips fleet!",
                     ]
+                ),
+                html.Br(),
+                html.Label(
+                    "Where is navigator?",
+                    style={"display": "block", "marginBottom": "0.5rem"},
                 ),
                 dcc.Dropdown(
                     id="name-align-dropdown",

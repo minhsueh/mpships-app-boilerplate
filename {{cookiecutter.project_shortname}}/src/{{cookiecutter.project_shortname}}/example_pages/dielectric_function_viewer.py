@@ -15,7 +15,7 @@ import plotly.graph_objects as pgo
 
 class DielectricFunctionViewer(MPShipsApp): # Required for MPShips functionality — do not remove
     # Define your app layout here
-    def get_layout(self, **kwargs): # Required for MPShips functionality — do not remove
+    def ships_layout(self): # Required for MPShips functionality — do not remove
         return html.Div(
             [
                 html.H2("Display dielectric function", style={"textAlign": "center"}),
@@ -39,8 +39,7 @@ class DielectricFunctionViewer(MPShipsApp): # Required for MPShips functionality
         )
 
     # Callbacks in Dash Pages use the global @callback decorator
-    def generate_callbacks(self, app, cache): # Required for MPShips functionality — do not remove
-        super().generate_callbacks(app, cache) # Required for MPShips functionality — do not remove
+    def ships_callbacks(self, app, cache):
         @app.callback(
             Output("fig-real-dielec", "figure"),
             Output("fig-imag-dielec", "figure"),

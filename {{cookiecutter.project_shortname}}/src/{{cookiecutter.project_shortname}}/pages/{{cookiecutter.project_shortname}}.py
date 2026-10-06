@@ -63,9 +63,10 @@ class {{cookiecutter.project_appname}}(MPShipsApp): # Required for MPShips funct
                             href="https://github.com/materialsproject/MPShips",
                             target="_blank",
                         ),
-                        " for review. Once approved, your ship will be cleared to set sail with the MPShips fleet!",
+                        " for review.",
                     ]
                 ),
+                html.H4("Once approved, your ship will be cleared to set sail with the MPShips fleet!"),
                 html.Br(),
                 html.Label(
                     "Where is navigator?",
